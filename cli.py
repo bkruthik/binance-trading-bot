@@ -43,7 +43,7 @@ try:
         print("Status:", response.get("status"))
         print("Executed Qty:", response.get("executedQty"))
     else:
-        print("\n❌ FAILED")
+        print("\nFAILED")
 
 except Exception as e:
     print("ERROR:", str(e))

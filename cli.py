@@ -5,7 +5,7 @@ from bot.logging_config import setup_logging
 
 setup_logging()
 
-print("🚀 BOT STARTED")  # DEBUG
+print("BOT STARTED")  # DEBUG
 
 parser = argparse.ArgumentParser()
 
@@ -24,10 +24,10 @@ try:
     if args.type == "LIMIT" and not args.price:
         raise ValueError("Price required for LIMIT order")
 
-    print("\n📌 Order Summary")
+    print("\nOrder Summary")
     print(vars(args))
 
-    print("➡️ Sending order...")
+    print("Sending order...")
 
     response = place_order(
         args.symbol,
@@ -38,7 +38,7 @@ try:
     )
 
     if response:
-        print("\n✅ SUCCESS")
+        print("\nSUCCESS")
         print("Order ID:", response.get("orderId"))
         print("Status:", response.get("status"))
         print("Executed Qty:", response.get("executedQty"))
@@ -46,4 +46,4 @@ try:
         print("\n❌ FAILED")
 
 except Exception as e:
-    print("⚠️ ERROR:", str(e))
+    print("ERROR:", str(e))

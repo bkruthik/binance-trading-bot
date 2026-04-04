@@ -5,7 +5,7 @@ client = get_client()
 
 def place_order(symbol, side, order_type, quantity, price=None):
     try:
-        print("➡️ Inside place_order")  # DEBUG
+        print("Inside place_order")  # DEBUG
 
         if order_type == "MARKET":
             order = client.futures_create_order(
@@ -25,11 +25,11 @@ def place_order(symbol, side, order_type, quantity, price=None):
                 timeInForce="GTC"
             )
 
-        print("✅ Order placed")  # DEBUG
+        print("Order placed!!")  # DEBUG
         logging.info(f"Response: {order}")
         return order
 
     except Exception as e:
-        print("❌ ORDER ERROR:", str(e))   # IMPORTANT
+        print("ORDER ERROR:", str(e))   
         logging.error(f"Error: {str(e)}")
         return None

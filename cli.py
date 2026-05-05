@@ -36,7 +36,6 @@ try:
         args.quantity,
         args.price
     )
-
     if response:
         print("\nSUCCESS")
         print("Order ID:", response.get("orderId"))
